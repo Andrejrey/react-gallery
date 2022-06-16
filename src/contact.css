@@ -1,55 +1,55 @@
 .titlebar {
-  height: 60px;
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+	background: rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+	height: 60px;
 }
 
 .titlebar svg {
-  position: absolute;
-  right: 15px;
-  top: 3px;
-  margin-top: 10px;
-  color: white;
-  cursor: pointer;
+	color: white;
+	cursor: pointer;
+	margin-top: 10px;
+	position: absolute;
+	right: 15px;
+	top: 3px;
 }
 
 .contact {
-  position: relative;
-  top: 50px;
-  margin: auto;
-  width: 500px;
-  height: 300px;
-  background: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+	background: rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+	height: 300px;
+	margin: auto;
+	position: relative;
+	top: 50px;
+	width: 500px;
 }
 
 .con {
-  height: 50px;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+	box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+	height: 50px;
 }
 
 .email {
-  position: relative;
-  top: 50px;
-  left: 30px;
-  color: white;
+	color: white;
+	left: 30px;
+	position: relative;
+	top: 50px;
 }
 
 .phone {
-  position: relative;
-  top: 110px;
-  left: 30px;
-  color: white;
+	color: white;
+	left: 30px;
+	position: relative;
+	top: 110px;
 }
 
 .phoneicon {
-  position: relative;
-  top: 6px;
-  font-size: 30px;
+	font-size: 30px;
+	position: relative;
+	top: 6px;
 }
 
 .mailicon {
-  position: relative;
-  top: 6px;
-  font-size: 30px;
+	font-size: 30px;
+	position: relative;
+	top: 6px;
 }

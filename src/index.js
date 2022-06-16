@@ -13,21 +13,21 @@ import InDoorGallery from "./components/inDoorGallery";
 import Contact from "./components/contact";
 import InImageData from "./inImagedata";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainApp />} />
-        <Route path="/aboutme" element={<AboutMe />} />
-        <Route path="/outdoorgallery" element={<OutDoorGallery />} />
-        <Route path="/indoorgallery" element={<InDoorGallery />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+	<React.StrictMode>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<MainApp/>}/>
+				<Route path="/aboutme" element={<AboutMe/>}/>
+				<Route path="/outdoorgallery" element={<OutDoorGallery/>}/>
+				<Route path="/indoorgallery" element={<InDoorGallery/>}/>
+				<Route path="/contact" element={<Contact/>}/>
+			</Routes>
+		</BrowserRouter>
+	</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
