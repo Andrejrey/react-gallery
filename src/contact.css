@@ -1,0 +1,55 @@
+.titlebar {
+  height: 60px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.titlebar svg {
+  position: absolute;
+  right: 15px;
+  top: 3px;
+  margin-top: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.contact {
+  position: relative;
+  top: 50px;
+  margin: auto;
+  width: 500px;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.con {
+  height: 50px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.email {
+  position: relative;
+  top: 50px;
+  left: 30px;
+  color: white;
+}
+
+.phone {
+  position: relative;
+  top: 110px;
+  left: 30px;
+  color: white;
+}
+
+.phoneicon {
+  position: relative;
+  top: 6px;
+  font-size: 30px;
+}
+
+.mailicon {
+  position: relative;
+  top: 6px;
+  font-size: 30px;
+}

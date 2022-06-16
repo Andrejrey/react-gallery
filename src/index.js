@@ -1,13 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import "./mainApp.css";
+import "./gallery.css";
+import "./aboutMe.css";
+import "./contact.css";
+import MainApp from "./mainApp";
+import reportWebVitals from "./reportWebVitals";
+import AboutMe from "./components/aboutMe";
+import OutDoorGallery from "./components/outDoorGallery";
+import InDoorGallery from "./components/inDoorGallery";
+import Contact from "./components/contact";
+import InImageData from "./inImagedata";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainApp />} />
+        <Route path="/aboutme" element={<AboutMe />} />
+        <Route path="/outdoorgallery" element={<OutDoorGallery />} />
+        <Route path="/indoorgallery" element={<InDoorGallery />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

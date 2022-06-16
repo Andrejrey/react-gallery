@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.main_box {
+  position: relative;
+  background: url("Background.jpg") center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.main_box .sidebar_menu {
+  position: fixed;
+  height: 100vh;
+  width: 280px;
+  left: -280px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar_menu .logo {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar_menu .logo h1 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  position: absolute;
+  left: 50px;
+  line-height: 60px;
+  text-decoration: none;
+}
+
+.sidebar_menu .menu {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+}
+
+.sidebar_menu .menu li {
+  margin-top: 6px;
+  padding: 12px 20px;
+  transition: all 0.3s linear;
+}
+
+.sidebar_menu .menu .icon {
+  color: #fff;
+  font-size: 30px;
+  margin-right: 8px;
+  margin-bottom: -10px;
+}
+
+.sidebar_menu .menu a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.sidebar_menu .menu li:hover {
+  border-left: 1px solid #fff;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar_menu .social_media {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+}
+
+.social_media i {
+  font-size: 20px;
+  margin: 0 5px;
+  color: #fff;
+  opacity: 0.6;
+  transition: all 0.2s linear;
+}
+
+.social_media i:hover {
+  opacity: 1;
+}
+
+#check {
+  display: none;
+}
+
+.main_box .btn_one i {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  left: 16px;
+  line-height: 60px;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.3s linear;
+}
+
+.main_box .btn_two i {
+  color: #fff;
+  font-size: 25px;
+  line-height: 60px;
+  position: absolute;
+  z-index: 2;
+  left: 240px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.btn_one i:hover {
+  font-size: 24px;
+}
+
+#check:checked ~ .sidebar_menu {
+  left: 0px;
+}
+
+#check:checked ~ .btn_one i {
+  opacity: 0;
+}
+
+#check:checked ~ .btn_two i {
+  opacity: 1;
+}
+
+p {
+  color: white;
+  text-align: center;
+  width: 500px;
+  left: 500px;
+}
+
+.logo2 {
+  position: fixed;
+  right: -20px;
+  margin-top: -30px;
+  width: 250px;
+  height: 250px;
+  z-index: 3;
+  animation: fadeInLogo 3s cubic-bezier(0.39, -1.05, 0.58, 1.95);
+}
+
+@keyframes fadeInLogo {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.75, 0.75, 1);
+  }
+  70% {
+    opacity: 0;
+    transform: scale3d(0.75, 0.75, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@media (max-width: 500px) {
+  .logo2 {
+    visibility: hidden;
+  }
+}
