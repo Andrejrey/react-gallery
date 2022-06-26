@@ -27,3 +27,4 @@ yarn-error.log*
 .Background.jpg
 /public/reylogo.png
 /public/bio.jpg
+src/Background.jpg

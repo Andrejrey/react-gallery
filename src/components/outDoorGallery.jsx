@@ -2,8 +2,8 @@ import { MdClose, MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import React, { useState } from "react";
 import OutImageData from "../outImageData";
 import TitleBar from "./titleBar";
-
 import "../gallery.css";
+import AppPagination from "./AppPagination";
 
 const OutDoorGallery = (imgSrc) => {
   const [image, setImage] = useState(false);
@@ -22,13 +22,14 @@ const OutDoorGallery = (imgSrc) => {
 
     if (currentSrc) {
       setTempImgSrc(currentSrc);
+      console.log(currentSrc);
     }
   };
 
   const prevImage = () => {
     setCurrentImage(currentImage === 1 ? length : currentImage - 1);
     const currentSrc = findImageById(currentImage);
-
+    console.log(currentImage);
     if (currentSrc) {
       setTempImgSrc(currentSrc);
     }
@@ -65,6 +66,9 @@ const OutDoorGallery = (imgSrc) => {
         <img src={tempImgSrc} />
         <MdClose className="close" onClick={() => setImage(false)} />
         <MdArrowForwardIos className="next" onClick={nextImage} />
+      </div>
+      <div className="pagi">
+        <AppPagination />
       </div>
     </>
   );

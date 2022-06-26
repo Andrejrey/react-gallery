@@ -1,8 +1,10 @@
 import { MdClose, MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import React, { useState } from "react";
 import "../gallery.css";
+import "../pagination.css";
 import InImageData from "../inImagedata";
 import TitleBar from "./titleBar";
+import AppPagination from "./AppPagination";
 
 const InDoorGallery = () => {
   const [image, setImage] = useState(false);
@@ -63,6 +65,9 @@ const InDoorGallery = () => {
             <MdArrowForwardIos className="next" onClick={nextImage} />
           </div>
         </div>
+      </div>
+      <div className="pagi">
+        <AppPagination />
       </div>
     </>
   );
