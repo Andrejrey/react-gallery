@@ -25,7 +25,6 @@ yarn-error.log*
 .idea
 /package-lock.json
 
-
 .Background.jpg
 /public/reylogo.png
 /public/bio.jpg
