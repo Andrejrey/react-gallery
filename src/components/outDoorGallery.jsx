@@ -7,7 +7,7 @@ import AppPagination from "./AppPagination";
 
 const OutDoorGallery = (imgSrc) => {
 	const [image, setImage] = useState(false);
-	const [tempImg, setTempImg] = useState("");
+	const [tempImg, setTempImg] = useState(null);
 	const [currentImageId, setCurrentImageId] = useState(1);
 	const length = OutImageData.length;
 
@@ -44,7 +44,8 @@ const OutDoorGallery = (imgSrc) => {
 	};
 
 	let btnPrev = (currentImageId > 1)  ? <MdArrowBackIosNew className="back" onClick={prevImage} /> : '',
-		btnNext = (currentImageId < length) ? <MdArrowForwardIos className="next" onClick={nextImage} /> : '';
+		btnNext = (currentImageId < length) ? <MdArrowForwardIos className="next" onClick={nextImage} /> : '',
+		showImg = tempImg ? <img src={tempImg.imgSrc} title={currentImageId} alt={currentImageId} /> : '';
 
 	return (
 		<>
@@ -59,7 +60,7 @@ const OutDoorGallery = (imgSrc) => {
 									key={item.id}
 									onClick={() => getImg(item)}
 								>
-									<img src={item.imgSrc}/>
+									<img src={item.imgSrc} title={currentImageId} alt={currentImageId} />
 									<div className="info">{item.id}</div>
 								</div>
 							);
@@ -69,7 +70,7 @@ const OutDoorGallery = (imgSrc) => {
 			</div>
 			<div className={image ? "image open" : "image"}>
 				{ btnPrev }
-				<img src={tempImg.imgSrc} title={currentImageId} alt={currentImageId} />
+				{showImg}
 				<MdClose className="close" onClick={() => setImage(false)} />
 				{ btnNext }
 			</div>
