@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import "./mainApp.css";
 import "./gallery.css";
 import "./aboutMe.css";
 import "./contact.css";
+import "./navBar.css";
 import MainApp from "./mainApp";
 import reportWebVitals from "./reportWebVitals";
 import AboutMe from "./components/aboutMe";

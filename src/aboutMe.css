@@ -27,6 +27,7 @@ h3 {
 
 .aboutme {
   position: relative;
+  border-radius: 15px;
   top: 50px;
   margin: auto;
   width: 1200px;
@@ -36,6 +37,7 @@ h3 {
 }
 
 .biography {
+  border-radius: 15px 15px 0 0;
   height: 50px;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
 }

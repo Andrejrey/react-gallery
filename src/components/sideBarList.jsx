@@ -4,7 +4,6 @@ import {
   MdPermContactCalendar,
 } from "react-icons/md";
 import { BsFileTextFill } from "react-icons/bs";
-import React from "react";
 import { Link } from "react-router-dom";
 
 const SideBarList = () => {

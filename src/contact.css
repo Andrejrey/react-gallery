@@ -29,6 +29,7 @@
 }
 
 .contact-box {
+  border-radius: 15px;
   max-width: 850px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -40,6 +41,7 @@
 }
 
 .left {
+  border-radius: 15px 0 0 15px;
   height: 100%;
   background: url("Background.jpg") center;
   background-size: cover;
@@ -66,10 +68,11 @@ h2::after {
   height: 4px;
   width: 50px;
   border-radius: 2px;
-  background-color: #ac2037;
+  background-color: #fd2232;
 }
 
 .field {
+  border-radius: 10px;
   width: 100%;
   padding: 0.5rem 1rem;
   outline: none;
@@ -94,10 +97,11 @@ h2::after {
 }
 
 .btn {
+  border-radius: 30px;
   width: 100%;
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
-  background-color: #ac2037;
+  background-color: #fd2232;
   color: white;
   cursor: pointer;
   outline: none;
@@ -105,7 +109,7 @@ h2::after {
 }
 
 .btn:hover {
-  background-color: #811a2b;
+  background-color: #b91d28;
 }
 
 @media screen and (max-width: 880px) {

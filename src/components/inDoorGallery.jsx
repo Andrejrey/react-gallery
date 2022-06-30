@@ -1,7 +1,6 @@
 import { MdClose, MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import React, { useState } from "react";
 import "../gallery.css";
-import "../pagination.css";
 import InImageData from "../inImagedata";
 import TitleBar from "./titleBar";
 import AppPagination from "./AppPagination";
