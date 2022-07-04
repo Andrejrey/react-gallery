@@ -40,14 +40,12 @@
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
 }
 
-.bio-left {
-  border-radius: 0 15px 15px 0;
+.bio-right img {
   height: 100%;
-  background: url("/public/bio.jpg") center;
-  background-size: cover;
+  border-radius: 0 15px 15px 0;
 }
 
-.bio-right {
+.bio-left {
   color: white;
   padding: 25px 40px;
   z-index: 2;
