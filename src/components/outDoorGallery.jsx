@@ -1,71 +1,91 @@
 import { MdClose, MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
-import React, { useState } from "react";
-import OutImageData from "../outImageData";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import TitleBar from "./titleBar";
 import "../gallery.css";
 import AppPagination from "./AppPagination";
 
 const OutDoorGallery = (imgSrc) => {
   const [image, setImage] = useState(false);
-  const [tempImgSrc, setTempImgSrc] = useState("");
-  const [currentImage, setCurrentImage] = useState(1);
-  const length = OutImageData.length;
+  const [tempImg, setTempImg] = useState(null);
+  const [currentImageId, setCurrentImageId] = useState(1);
+  const [length, setLength] = useState();
+  const [outImageData, setOutImagedata] = useState([]);
 
-  const getImg = (imgSrc) => {
-    setTempImgSrc(imgSrc);
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/outdoor")
+      .then(function (response) {
+        // handle success
+        console.log("Axios response", response);
+        setOutImagedata(response.data);
+        setLength(response.data.length);
+        console.log(outImageData);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+  }, []);
+
+  const getImg = (img) => {
+    setCurrentImageId(img.id);
+    setTempImg(img);
     setImage(true);
   };
 
   const nextImage = () => {
-    setCurrentImage(currentImage === length ? 1 : currentImage + 1);
-    const currentSrc = findImageById(currentImage);
+    const id = currentImageId + 1;
+    setCurrentImageId(currentImageId === length ? 1 : id);
+    const current = findImageById(id);
 
-    if (currentSrc) {
-      setTempImgSrc(currentSrc);
-      console.log(currentSrc);
+    if (current) {
+      setTempImg(current);
+      console.log("next", currentImageId);
     }
   };
 
   const prevImage = () => {
-    setCurrentImage(currentImage === 1 ? length : currentImage - 1);
-    const currentSrc = findImageById(currentImage);
-    console.log(currentImage);
-    if (currentSrc) {
-      setTempImgSrc(currentSrc);
+    const id = currentImageId - 1;
+    setCurrentImageId(currentImageId === 1 ? length : id);
+    const current = findImageById(id);
+
+    if (current) {
+      setTempImg(current);
+      console.log("prev", currentImageId);
     }
   };
 
   const findImageById = (id) => {
-    const img = OutImageData.find((img) => img.id === id);
-    if (img) {
-      return img.imgSrc;
-    }
-    return false;
+    return outImageData.find((img) => img.id === id);
   };
+
+  let btnPrev = currentImageId > 1 ? <MdArrowBackIosNew className="back" onClick={prevImage} /> : "",
+    btnNext = currentImageId < length ? <MdArrowForwardIos className="next" onClick={nextImage} /> : "",
+    showImg = tempImg ? <img src={tempImg.imgSrc} title={currentImageId} alt={currentImageId} /> : "";
 
   return (
     <>
       <TitleBar />
       <div className="gallery">
         <div className="allimg">
-          {OutImageData.map((item, index) => {
+          {outImageData.map((item) => {
             return (
-              <div
-                className="img"
-                key={index}
-                onClick={() => getImg(item.imgSrc)}
-              >
-                <img src={item.imgSrc} />
+              <div className="img" key={item.id} onClick={() => getImg(item)}>
+                <img src={item.imgSrc} title={currentImageId} alt={currentImageId} />
               </div>
             );
           })}
         </div>
       </div>
       <div className={image ? "image open" : "image"}>
-        <MdArrowBackIosNew className="back" onClick={prevImage} />
-        <img src={tempImgSrc} />
+        {btnPrev}
+        {showImg}
         <MdClose className="close" onClick={() => setImage(false)} />
-        <MdArrowForwardIos className="next" onClick={nextImage} />
+        {btnNext}
       </div>
       <div className="pagi">
         <AppPagination />
