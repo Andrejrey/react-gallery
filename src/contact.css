@@ -43,7 +43,7 @@
 .left {
   border-radius: 15px 0 0 15px;
   height: 100%;
-  background: url("Background.jpg") center;
+  background: url("Background2.jpg") center;
   background-size: cover;
 }
 
@@ -117,7 +117,9 @@ h2::after {
     grid-template-columns: 1fr;
     min-width: 330px;
   }
+
   .left {
-    height: 200px;
+    min-height: 370px;
+    border-radius: 15px 15px 0 0;
   }
 }
