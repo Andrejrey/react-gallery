@@ -1,67 +1,83 @@
-.titlebar {
-	background: rgba(0, 0, 0, 0.3);
-	box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
-	height: 60px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.titlebar svg {
-	color: white;
-	cursor: pointer;
-	margin-top: 10px;
-	position: absolute;
-	right: 15px;
-	top: 3px;
-}
-
-h1 {
-	color: white;
-	left: 30px;
-	position: absolute;
-}
-
-h3 {
-	color: white;
-	left: 30px;
-	position: absolute;
-}
-
-.aboutme {
-	background: rgba(0, 0, 0, 0.6);
-	box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
-	height: 800px;
-	margin: auto;
-	position: relative;
-	top: 50px;
-	width: 1200px;
+.bio-body {
+  width: 100%;
+  height: 100vh;
 }
 
 .biography {
-	box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
-	height: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 100px;
 }
 
-.bioimg {
-	position: absolute;
-	right: 10px;
-	width: 550px;
+.biography::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.text {
-	position: absolute;
-	top: 60px;
-	width: 600px;
+.biography-box {
+  border-radius: 15px;
+  max-width: 850px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
 }
 
-text {
-	color: white;
-	left: 30px;
-	position: absolute;
-	top: 35px;
+.bio-right img {
+  height: 100%;
+  border-radius: 0 15px 15px 0;
 }
 
-.text2 {
-	color: white;
-	left: 30px;
-	position: absolute;
-	top: 185px;
+.bio-left {
+  color: white;
+  padding: 25px 40px;
+  z-index: 2;
+}
+
+h2 {
+  color: white;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 50px;
+  border-radius: 2px;
+  background-color: #fd2232;
+}
+
+@media screen and (max-width: 880px) {
+  .biography-box {
+    grid-template-columns: 1fr;
+    min-width: 330px;
+  }
+
+  .bio-left {
+    min-height: 370px;
+    border-radius: 15px 15px 0 0;
+  }
 }

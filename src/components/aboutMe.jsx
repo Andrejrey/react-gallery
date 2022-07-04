@@ -1,46 +1,45 @@
-import React from "react";
-import {MdOutlineKeyboardBackspace} from "react-icons/md";
-import {Link} from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import TitleBar from "./titleBar";
+
 import "../aboutMe.css";
 
 const AboutMe = () => {
-	return (
-		<>
-			<div className="titlebar">
-				{/*<a>Outdoor Images</a> */}
-				<Link to="/">
-					<MdOutlineKeyboardBackspace/>
-				</Link>
-			</div>
-			<div className="aboutme">
-				<div className="biography">
-					<h1>Biography</h1>
-				</div>
-				<div className="text">
-					<h3>Lorem ipsum </h3>
-					<text>
-						Dolor sit, amet consectetur adipisicing elit. Magni temporibus nam
-						natus omnis sunt dignissimos soluta numquam! Aperiam doloremque,
-						vero voluptates saepe quibusdam labore, ratione explicabo accusamus
-						ipsa id minima. Lorem ipsum dolor sit, amet consectetur adipisicing
-						elit. Magni temporibus nam natus omnis sunt dignissimos soluta
-						numquam! Aperiam doloremque, vero voluptates saepe quibusdam labore,
-						ratione explicabo accusamus ipsa id minima.
-					</text>
-					<text className="text2">
-						Dolor sit, amet consectetur adipisicing elit. Magni temporibus nam
-						natus omnis sunt dignissimos soluta numquam! Aperiam doloremque,
-						vero voluptates saepe quibusdam labore, ratione explicabo accusamus
-						ipsa id minima. Lorem ipsum dolor sit, amet consectetur adipisicing
-						elit. Magni temporibus nam natus omnis sunt dignissimos soluta
-						numquam! Aperiam doloremque, vero voluptates saepe quibusdam labore,
-						ratione explicabo accusamus ipsa id minima.
-					</text>
-				</div>
-				<img src="/bio.jpg" className="bioimg" alt=""/>
-			</div>
-		</>
-	);
-};
+  const [aboutMe, setAboutMe] = useState([]);
 
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/about_me")
+      .then(function (response) {
+        // handle success
+        console.log("Axios response", response);
+        setAboutMe(response.data);
+        console.log(aboutMe);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+  }, []);
+
+  return (
+    <div className="bio-body">
+      <TitleBar />
+      <div className="biography">
+        <div className="biography-box">
+          <div className="bio-left">
+            <h2>{aboutMe.title}</h2>
+            <div>{aboutMe.text}</div>
+          </div>
+          <div className="bio-right">
+            <img src={aboutMe.imgSrc} alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 export default AboutMe;

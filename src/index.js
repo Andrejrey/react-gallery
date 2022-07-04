@@ -1,17 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import "./mainApp.css";
 import "./gallery.css";
 import "./aboutMe.css";
 import "./contact.css";
+import "./navBar.css";
 import MainApp from "./mainApp";
 import reportWebVitals from "./reportWebVitals";
 import AboutMe from "./components/aboutMe";
 import OutDoorGallery from "./components/outDoorGallery";
 import InDoorGallery from "./components/inDoorGallery";
 import Contact from "./components/contact";
-import InImageData from "./inImagedata";
 
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
