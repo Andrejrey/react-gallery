@@ -30,7 +30,7 @@
 
 .contact-box {
   border-radius: 15px;
-  max-width: 850px;
+  max-width: 1000px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
@@ -43,6 +43,7 @@
 .left {
   border-radius: 15px 0 0 15px;
   height: 100%;
+  min-width: 500px;
   background: url("Background2.jpg") center;
   background-size: cover;
 }
