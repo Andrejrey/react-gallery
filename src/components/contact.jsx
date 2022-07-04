@@ -1,5 +1,3 @@
-import { BsFillPhoneFill } from "react-icons/bs";
-import { IoMdMail } from "react-icons/io";
 import "../contact.css";
 import TitleBar from "./titleBar";
 
