@@ -8,7 +8,7 @@ import AppPagination from "./AppPagination";
 const OutDoorGallery = (imgSrc) => {
   const [image, setImage] = useState(false);
   const [tempImg, setTempImg] = useState(null);
-  const [currentImageId, setCurrentImageId] = useState(1);
+  const [currentImageId, setCurrentImageId] = useState(0);
   const [length, setLength] = useState();
   const [outImageData, setOutImagedata] = useState([]);
 
@@ -31,15 +31,15 @@ const OutDoorGallery = (imgSrc) => {
       });
   }, []);
 
-  const getImg = (img) => {
-    setCurrentImageId(img.id);
+  const getImg = (img, index) => {
+    setCurrentImageId(index);
     setTempImg(img);
     setImage(true);
   };
 
   const nextImage = () => {
     const id = currentImageId + 1;
-    setCurrentImageId(currentImageId === length ? 1 : id);
+    setCurrentImageId(currentImageId === length ? 0 : id);
     const current = findImageById(id);
 
     if (current) {
@@ -50,7 +50,7 @@ const OutDoorGallery = (imgSrc) => {
 
   const prevImage = () => {
     const id = currentImageId - 1;
-    setCurrentImageId(currentImageId === 1 ? length : id);
+    setCurrentImageId(currentImageId === 0 ? length : id);
     const current = findImageById(id);
 
     if (current) {
@@ -72,10 +72,10 @@ const OutDoorGallery = (imgSrc) => {
       <TitleBar />
       <div className="gallery">
         <div className="allimg">
-          {outImageData.map((item) => {
+          {outImageData.map((item, index) => {
             return (
-              <div className="img" key={item.id} onClick={() => getImg(item)}>
-                <img src={item.imgSrc} title={currentImageId} alt={currentImageId} />
+              <div className="img" key={index} onClick={() => getImg(item, index)}>
+                <img src={item.imgSrc} title={index} alt={index} />
               </div>
             );
           })}

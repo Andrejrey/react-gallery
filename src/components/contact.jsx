@@ -11,6 +11,13 @@ const Contact = () => {
     name: "",
     phone: "",
   });
+  const [errMsg, setErrMsg] = useState({
+    subject: "",
+    email: "",
+    mesagge: "",
+    name: "",
+    phone: "",
+  });
 
   const SendContact = (e) => {
     e.stopPropagation();
@@ -21,8 +28,11 @@ const Contact = () => {
         console.log("Axios response", response);
       })
       .catch(function (error) {
-        // handle error
-        console.log(error);
+        // validation error, status 422
+        if(422 === error.response.status) {
+//          console.log(error.response.data.errors);
+          setErrMsg(error.response.data.errors)
+        }
       })
       .then(function () {
         // always executed
@@ -36,6 +46,7 @@ const Contact = () => {
     };
     setFormData(data);
   };
+  const formErrMsg = (name) => errMsg[name] ? (<div className="alert">{errMsg[name]}</div>) : '';
 
   return (
     <>
@@ -47,10 +58,15 @@ const Contact = () => {
             <div className="right">
               <h2>Contact Us</h2>
               <input type="text" className="field" placeholder="Name" name="name" onChange={ChangeFormData}></input>
+              {formErrMsg('name')}
               <input type="text" className="field" placeholder="Phone" name="phone" onChange={ChangeFormData}></input>
+              {formErrMsg('phone')}
               <input type="email" className="field" placeholder="Your E-mail" name="email" onChange={ChangeFormData}></input>
+              {formErrMsg('email')}
               <input type="text" className="field" placeholder="Subject" name="subject" onChange={ChangeFormData}></input>
+              {formErrMsg('subject')}
               <textarea className="field area" placeholder="Message" name="message" onChange={ChangeFormData}></textarea>
+              {formErrMsg('message')}
               <button className="btn" onClick={SendContact}>
                 Send
               </button>

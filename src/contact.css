@@ -124,3 +124,11 @@ h2::after {
     border-radius: 15px 15px 0 0;
   }
 }
+.alert {
+  margin: -20px 0 10px 0;
+  color: #fff;
+  text-align: center;
+  background-color: #c00;
+  padding: 10px;
+  border-radius: 5px;
+}
