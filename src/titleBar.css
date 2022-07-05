@@ -1,0 +1,81 @@
+.titlebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  height: 60px;
+  background: #22272b;
+  z-index: 10;
+}
+
+.title {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.titlebar a {
+  margin-top: 6px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.titlebar svg {
+  position: absolute;
+  right: 15px;
+  top: 3px;
+  margin-top: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.logo-header-titlebar {
+  display: table;
+  float: left;
+  vertical-align: middle;
+  padding: 0;
+  color: white;
+  margin: 0;
+  width: 180px;
+  height: 60px;
+  position: relative;
+  z-index: 9;
+  transition: all 0.5s;
+  -moz-transition: all 0.5;
+  -webkit-transform: all 0.5;
+  -o-transition: all 0.5;
+}
+
+.logo-header-titlebar:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  z-index: -1;
+  right: -50px;
+  width: 80%;
+  transform: skew(30deg);
+  background-color: #ffe10a;
+}
+
+.logo-header-titlebar:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  z-index: -1;
+  right: 10%;
+  width: 210px;
+  transform: skew(-30deg);
+  background-color: #ffe10a;
+}
+
+.logo-header-titlebar a {
+  color: #22272b;
+  font-size: 33px;
+  font-weight: 600;
+  line-height: 60px;
+  text-decoration: none;
+}

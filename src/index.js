@@ -5,6 +5,7 @@ import "./gallery.css";
 import "./aboutMe.css";
 import "./contact.css";
 import "./navBar.css";
+import "./titleBar.css";
 import MainApp from "./mainApp";
 import reportWebVitals from "./reportWebVitals";
 import AboutMe from "./components/aboutMe";

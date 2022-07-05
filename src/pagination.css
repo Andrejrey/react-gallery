@@ -1,18 +1,17 @@
 .pagination {
   position: fixed;
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+  background: #22272b;
   bottom: 0;
   width: 100vw;
 }
 
 .pagination .MuiPaginationItem-root {
   background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
   color: white;
 }
 
 .MuiPagination-ul {
-  display: flex;
+  position: sticky;
+  bottom: 0;
   justify-content: center;
 }
