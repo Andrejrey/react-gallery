@@ -7,14 +7,14 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     subject: "",
     email: "",
-    mesagge: "",
+    message: "",
     name: "",
     phone: "",
   });
   const [errMsg, setErrMsg] = useState({
     subject: "",
     email: "",
-    mesagge: "",
+    message: "",
     name: "",
     phone: "",
   });
