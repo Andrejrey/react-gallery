@@ -7,6 +7,9 @@ const TitleBar = () => {
   console.log(url);
   return (
     <div className="titlebar">
+      <div className="logo-header-titlebar">
+        <a href="#">Gallery</a>
+      </div>
       {/*<h2>{url === "/outdoorgallery" ? "Outdoor Images" : ""}</h2>*/}
       <Link to="/">
         <MdOutlineKeyboardBackspace />

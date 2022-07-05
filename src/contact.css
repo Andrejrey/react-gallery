@@ -30,21 +30,21 @@
 
 .contact-box {
   border-radius: 15px;
-  max-width: 1000px;
+  max-width: 850px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+  background: #22272b;
+  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
 }
 
 .left {
   border-radius: 15px 0 0 15px;
   height: 100%;
-  min-width: 500px;
-  background: url("Background2.jpg") center;
+
+  background: url("Background.jpg") center;
   background-size: cover;
 }
 
@@ -69,7 +69,7 @@ h2::after {
   height: 4px;
   width: 50px;
   border-radius: 2px;
-  background-color: #fd2232;
+  background-color: #fddb0d;
 }
 
 .field {
@@ -98,19 +98,19 @@ h2::after {
 }
 
 .btn {
-  border-radius: 30px;
+  border-radius: 14px;
   width: 100%;
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
-  background-color: #fd2232;
-  color: white;
+  background-color: #fddb0d;
+  color: #22272b;
   cursor: pointer;
   outline: none;
   border: none;
 }
 
 .btn:hover {
-  background-color: #b91d28;
+  background-color: #e7ca0e;
 }
 
 @media screen and (max-width: 880px) {

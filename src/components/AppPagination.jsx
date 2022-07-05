@@ -7,7 +7,7 @@ import "../pagination.css";
 const outerTheme = createTheme({
   palette: {
     secondary: {
-      main: "#fd2232",
+      main: "#ffe10a",
     },
   },
 });
