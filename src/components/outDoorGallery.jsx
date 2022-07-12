@@ -8,7 +8,7 @@ import AppPagination from "./AppPagination";
 const OutDoorGallery = (imgSrc) => {
   const [image, setImage] = useState(false);
   const [tempImg, setTempImg] = useState(null);
-  const [currentImageId, setCurrentImageId] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [length, setLength] = useState();
   const [outImageData, setOutImagedata] = useState([]);
 
@@ -32,40 +32,40 @@ const OutDoorGallery = (imgSrc) => {
   }, []);
 
   const getImg = (img, index) => {
-    setCurrentImageId(index);
+    setCurrentImageIndex(index);
     setTempImg(img);
     setImage(true);
   };
 
   const nextImage = () => {
-    const id = currentImageId + 1;
-    setCurrentImageId(currentImageId === length ? 0 : id);
-    const current = findImageById(id);
+    const index = currentImageIndex + 1;
+    setCurrentImageIndex(currentImageIndex === length ? 0 : index);
+    const current = findImageByIndex(index);
 
     if (current) {
       setTempImg(current);
-      console.log("next", currentImageId);
+      console.log("next", currentImageIndex);
     }
   };
 
   const prevImage = () => {
-    const id = currentImageId - 1;
-    setCurrentImageId(currentImageId === 0 ? length : id);
-    const current = findImageById(id);
+    const index = currentImageIndex - 1;
+    setCurrentImageIndex(currentImageIndex === 0 ? length : index);
+    const current = findImageByIndex(index);
 
     if (current) {
       setTempImg(current);
-      console.log("prev", currentImageId);
+      console.log("prev", currentImageIndex);
     }
   };
 
-  const findImageById = (id) => {
-    return outImageData.find((img) => img.id === id);
+  const findImageByIndex = (index) => {
+    return outImageData.find((img, i) => i === index);
   };
 
-  let btnPrev = currentImageId > 1 ? <MdArrowBackIosNew className="back" onClick={prevImage} /> : "",
-    btnNext = currentImageId < length ? <MdArrowForwardIos className="next" onClick={nextImage} /> : "",
-    showImg = tempImg ? <img src={tempImg.imgSrc} title={currentImageId} alt={currentImageId} /> : "";
+  let btnPrev = currentImageIndex > 0 ? <MdArrowBackIosNew className="back" onClick={prevImage} /> : "",
+    btnNext = currentImageIndex < (length - 1) ? <MdArrowForwardIos className="next" onClick={nextImage} /> : "",
+    showImg = tempImg ? <img src={tempImg.imgSrc} title={currentImageIndex} alt={currentImageIndex} /> : "";
 
   return (
     <>
